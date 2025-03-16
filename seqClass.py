@@ -24,14 +24,15 @@ args.seq = args.seq.upper()                 # Note we just added this line
 
 #ensures that the sequence is valid rna or dna and then classifies it accoding to the presence of U or T
 if re.search('^[ACGTU]+$', args.seq):
-    if re.search('T', args.seq):
-        print ('The sequence is DNA')
-    elif re.search('U', args.seq):
-        print ('The sequence is RNA')
+    # Check if the sequence contains only T (DNA) or only U (RNA)
+    if 'T' in args.seq and 'U' in args.seq:
+        print('Invalid sequence: contains both T and U, which is not biologically possible.')
+    elif 'T' in args.seq:
+        print('The sequence is DNA')
+    elif 'U' in args.seq:
+        print('The sequence is RNA')
     else:
-        print ('The sequence can be DNA or RNA')
-else:
-    print ('The sequence is not DNA nor RNA, please check')
+        print('The sequence is ambiguous (could be DNA or RNA)')
 
 #if motif search is provided (since it wasn't mandatory in the arguments at the beggining of the code. if it is, it convers to uppercase here too and searches the motif in the sequence
 if args.motif:
