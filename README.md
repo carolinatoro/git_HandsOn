@@ -1,0 +1,1 @@
+File 'seqClass.py' was created as part of the git hands on of the epigenomics UVIC module. The file analyses a string of what should be aminoacids and determines if the sequence provided by the user is DNA or RNA, assessing if it contains "T" or "U" bases, respectively
