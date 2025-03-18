@@ -28,12 +28,13 @@ args.seq = args.seq.upper()                 # Note we just added this line
 
 #ensures that the sequence is valid rna or dna and then classifies it accoding to the presence of U or T. Based on this classification, it computes percentage of each nucleotide
 if re.search('^[ACGTU]+$', args.seq):
-    # Check if the sequence contains only T (DNA) or only U (RNA)
-    if 'T' in args.seq and 'U' in args.seq:
-        print('Invalid sequence: contains both T and U, which is not biologically possible.')
 
     counts = {}
     tot_nucleo = len (args.seq)
+    
+    # Check if the sequence contains only T (DNA) or only U (RNA)
+    if 'T' in args.seq and 'U' in args.seq:
+        print('Invalid sequence: contains both T and U, which is not biologically possible.')
   
     elif 'T' in args.seq: # if DNA
         print('The sequence is DNA')
