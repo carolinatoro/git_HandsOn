@@ -32,6 +32,7 @@ if re.search('^[ACGTU]+$', args.seq):
     # Check if the sequence contains only T (DNA) or only U (RNA)
     if 'T' in args.seq and 'U' in args.seq:
         print('Invalid sequence: contains both T and U, which is not biologically possible.')
+        sys.exit(1) #added an exit if wrong
   
     elif 'T' in args.seq: # if DNA
         print('The sequence is DNA')
